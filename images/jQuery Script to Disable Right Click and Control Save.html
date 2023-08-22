@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://demo.smarttutorials.net/jquery_preventer/sample.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>jQuery Script to Disable Right Click and Control Save</title>
+<style>
+@font-face{
+  font-family: Lobster;
+  src: url('Lobster.otf');
+}
+h1{
+  font-family: Lobster;
+  text-align: center;
+  color: orange;
+  font-size: 40px;
+}
+p{
+  text-align: center;
+  color: #999;
+}
+img{
+ margin-left: 400px;
+}
+</style>
+</head>
+<body>
+<h1>jQuery Script to Disable Right Click <br> and Control Save</h1>
+<p>Check the Right Click and Control Save options are disabled on this page</p>
+<img src="./jQuery Script to Disable Right Click and Control Save_files/muni.jpg" alt="muni">
+<script src="./jQuery Script to Disable Right Click and Control Save_files/jquery-1.9.1.min.js.download"></script>
+<script>
+(function ($) {
+          $(document).bind('contextmenu',function(e){
+			    e.preventDefault();
+			});
+			$(window).unbind('keypress').keypress(function(event) {
+			    if (!(event.which == 115 && event.ctrlKey))return true;
+			    event.preventDefault();
+			    return false;
+			});
+			
+}(jQuery));
+
+</script>
+
+
+</body></html>
